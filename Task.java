@@ -1,6 +1,6 @@
 
 //a class for a task
-public class Task {
+public class Task implements java.io.Serializable {
 
 	String name;
 	boolean completed;

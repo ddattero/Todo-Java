@@ -1,7 +1,8 @@
 import java.util.ArrayList;
+import java.io.*;
 
 //a list of tasks, with associated functions for a todo list
-public class TaskList {
+public class TaskList implements java.io.Serializable {
 	ArrayList<Task> tasks;
 	
 	//creates a new
@@ -34,6 +35,15 @@ public class TaskList {
 	void uncomplete (int x) {
 		x = x - 1;
 		tasks.get(x).uncomplete();
+	}
+	
+	//removes completed tasks
+	void removeCompleted() {
+		for (int i = 0; i < tasks.size(); i++) {
+			if (tasks.get(i).isComplete()) {
+				tasks.remove(i);
+			}
+		}
 	}
 	
 	//prints the list
